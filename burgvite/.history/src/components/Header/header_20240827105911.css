@@ -1,0 +1,113 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-color: #f4f4f4;
+}
+
+.navbar {
+    background-color: rgb(192, 155, 35);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2%;
+    position: relative;
+    height: 60px;
+}
+
+.logo {
+    color: white;
+    font-size: 24px;
+}
+
+.menu-toggle {
+    margin-left: auto;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    display: none; /* Masquer par défaut sr l'ecran */
+}
+
+
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: rgb(192, 155, 35);
+    transform: translateY(-100%); 
+    transition: transform 0.5s ease-in-out;
+    z-index: -1; /* permet de s'assurer que le menu est en dessous de tt les autres éléements */
+}
+
+.nav-links.active {
+    transform: translateY(0); 
+   
+}
+
+.nav-links li {
+    margin: 15px 0;
+}
+
+.nav-links a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    padding: 15px;
+    display: block;
+}
+
+.icones{
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    justify-content: space-around;
+}
+
+.click-and-collect-btn {
+    width: 50%;
+    border-radius: 30px;
+    background-color: rgb(221, 136, 9);
+    box-shadow: none;
+    border: none;
+
+}
+
+
+@media only screen and (max-width: 768px) {
+    .nav-links {
+        display: flex; 
+    }
+
+    .menu-toggle {
+        display: block; 
+    }
+
+    .nav-links li {
+        margin: 0;
+        text-align: center;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media only screen and (min-width: 769px) {
+    .nav-links {
+        position: static;
+        transform: none;
+        flex-direction: row;
+    }
+
+    .nav-links li {
+        margin: 0 15px;
+    }
+}
